@@ -1,4 +1,6 @@
 #Importing Packages
+
+from CCfunctions import*
 from PIL import Image, ImageDraw
 import pandas as pd
 import numpy as np
@@ -43,12 +45,20 @@ from pyspark.context import SparkContext
 
 from os import listdir
 from os.path import isfile, join
+from sklearn.externals import joblib
 
 
 
 # Importing 
 mypath = 'C:\\Users\\kunal\\Desktop\\WORK\\Datathon\\Phase02-DataDelivery\\sugarcanetiles'
 onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+
+# load Model
+
+filename = '15ImageModel_model.sav'
+#joblib.dump(model, filename)
+
+Kmean = joblib.load(filename)
 
 
 IterrateTiles = pd.DataFrame()
