@@ -1,4 +1,50 @@
+from CCfunctions import*
 
+import pandas as pd
+import numpy as np
+import pyarrow as pa
+from tqdm import tqdm, trange, tqdm_notebook
+from time import sleep
+from math import sqrt
+import glob
+import os
+import re
+
+from matplotlib import pyplot as plt
+from sklearn.datasets.samples_generator import make_blobs
+from sklearn.cluster import KMeans
+
+from sklearn.pipeline import make_pipeline
+from sklearn import datasets
+
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import make_pipeline
+scaler = StandardScaler()
+
+import pandas as pd
+from sklearn import preprocessing
+import boto3
+import io
+import pandas as pd
+import pyarrow.parquet as pq
+
+from pandas import DataFrame
+import pyspark
+from pyspark.sql import SparkSession
+import plotly
+from pyspark.ml.clustering import KMeans
+from pyspark.ml.evaluation import ClusteringEvaluator
+from pyspark.ml.feature import VectorAssembler
+from pyspark.sql import SQLContext
+from pyspark import SparkContext
+from pyspark import SparkConf
+from pyspark.context import SparkContext
+
+from os import listdir
+from os.path import isfile, join
+from sklearn.externals import joblib
+from PIL import Image, ImageDraw
 ##
 def get_mask_path(tile_x, tile_y):
     path = 'C:\\Users\\kunal\\Desktop\\WORK\\Datathon\\Phase02-DataDelivery\\'
@@ -16,6 +62,7 @@ def get_mask_path(tile_x, tile_y):
 
 
 def load_image(tile_path):
+	
     img = Image.open(tile_path)
     return img
 

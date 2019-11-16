@@ -1,7 +1,7 @@
 #Importing Packages
 
 from CCfunctions import*
-from PIL import Image, ImageDraw
+
 import pandas as pd
 import numpy as np
 import pyarrow as pa
@@ -46,6 +46,7 @@ from pyspark.context import SparkContext
 from os import listdir
 from os.path import isfile, join
 from sklearn.externals import joblib
+from PIL import Image, ImageDraw
 
 
 
@@ -72,6 +73,12 @@ IterrateTiles['TileTuple'] = IterrateTiles['X Tile'].astype(str) + " "+ Iterrate
 SelectedTiles = ['7680 10240']
 SelecteDF  = IterrateTiles[IterrateTiles['TileTuple'].isin(SelectedTiles)]
 SelecteDF = SelecteDF[['X Tile','Y Tile','TileTuple']].drop_duplicates()
+columns = ["tile_x","tile_y", "x","y", "date", "mask", "red","green","blue"]
+columns.extend([f'B{b:02d}' for b in range(1,13)])
+
+min_max_scaler = preprocessing.MinMaxScaler()
+
+vegi1InputCols = ['Scaled_NDVI', 'Scaled_LCI', 'Scaled_LAI', 'Scaled_GNDVI', 'Scaled_SCI']
 
 
 for index,row in SelecteDF.iterrows():
@@ -104,6 +111,8 @@ for index,row in SelecteDF.iterrows():
         b_img_list = [open_image(b_path, cropbox = cropbox, verbose=False) for b_path in b_path_list]
 
         data = read_img_pixel_values(tile_x, tile_y, date, masp, tci_img, *b_img_list)
+		
+		#columns.extend([f'B{b:02d}' for b in range(1,13)])
 
         df = pd.DataFrame(columns=columns, data=data)
     # apply a very very simple havested rules
