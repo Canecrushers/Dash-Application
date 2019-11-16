@@ -46,12 +46,7 @@ from os.path import isfile, join
 from sklearn.externals import joblib
 from PIL import Image, ImageDraw
 ##
-def get_mask_path(tile_x, tile_y):
-    path = 'C:\\Users\\kunal\\Desktop\\WORK\\Datathon\\Phase02-DataDelivery\\'
-    path += f"masks\\mask-x{tile_x}-y{tile_y}.png"
-    #path += f"./data/sentinel-2a-tile-{tile_x}x-{tile_y}y/masks/{mask_type}-mask.png"
-    #path = f'E:\work\canecrushers\phase-01\data\sentinel-2a-tile-7680x-10240y\timeseries\'
-    return path
+
 
 	
 def get_mask_path(tile_x, tile_y):

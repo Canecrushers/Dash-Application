@@ -1,6 +1,6 @@
 #Importing Packages
 
-from CCfunctions import*
+
 
 import pandas as pd
 import numpy as np
@@ -47,6 +47,7 @@ from os import listdir
 from os.path import isfile, join
 from sklearn.externals import joblib
 from PIL import Image, ImageDraw
+from CCfunctions import*
 
 
 
