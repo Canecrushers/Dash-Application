@@ -103,7 +103,7 @@ for index,row in SelecteDF.iterrows():
     ModelDF = pd.DataFrame()
     assert len(tci_list) == len(b_path_lol[0])
     (tile_x, tile_y) = (TILE_X, TILE_Y)
-    for day_no in trange(0,4): # len(tci_list)):
+    for day_no in range(0,1): # len(tci_list)):
         tci_path = tci_list[day_no]
         date = last_date_in_path(tci_path)
         b_path_list = [b_path_list[day_no] for b_path_list in b_path_lol]
