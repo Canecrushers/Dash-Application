@@ -1,0 +1,6 @@
+# Harvested cane per hectare = 97.7 tons/ hectare
+or 9.7kgs per m^2
+1 Pixel = 10m x 10m roughly 100m^2
+Kgs Harvested per pixel = 9.7kgs
+6.6tons of sugar = 1ton of sugar,
+hence each pixcel produces 1.47 kgs of sugar
