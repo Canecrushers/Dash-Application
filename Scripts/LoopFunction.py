@@ -10,7 +10,7 @@ import glob
 import os
 import re
 
-from matplotlib import pyplot as plt
+#from matplotlib import pyplot as plt
 from sklearn.datasets.samples_generator import make_blobs
 from sklearn.cluster import KMeans
 
